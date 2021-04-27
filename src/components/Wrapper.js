@@ -5,7 +5,6 @@ import Foreground1 from "./Foreground1.js"
 import Foreground2 from "./Foreground2.js";
 import Background1 from "./Background1.js";
 import Background2 from "./Background2.js";
-import useWebAnimations from "@wellyshen/use-web-animations"; 
 
 export const Wrapper = () => {
     // const { ref, playState } = useWebAnimations({

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Background1 from "./Background1.js";
 import Background2 from "./Background2.js";
 import Foreground1 from "./Foreground1.js";
@@ -6,7 +6,7 @@ import Foreground2 from "./Foreground2.js";
 import useWebAnimations from "@wellyshen/use-web-animations";
 
 export const Earth = () => {
-    const { ref, playState, getAnimation } = useWebAnimations({
+    const { ref,  getAnimation } = useWebAnimations({
         playbackRate: 1,
         keyframes: 
         { transform: "translateY(0)" ,
@@ -41,22 +41,19 @@ export const Earth = () => {
         }
     }
     
-    useEffect(() => {
-        setInterval(() => {
-            if(redQueen_alice.playbackRate > .4){
-                redQueen_alice.playbackRate *= .9;
-            }
-            adjustBackgroundPlayback();
-        },3000);
+    setInterval(() => {
+        if(redQueen_alice.playbackRate > .4){
+            redQueen_alice.playbackRate *= .9;
+        }
+        adjustBackgroundPlayback();
+    },3000);
     
-        document.addEventListener("click", (e) => {
-            var goFaster = () => {
-                redQueen_alice.playbackRate *= 1.1;
-                adjustBackgroundPlayback();
-            }
-        });
-    },[]);
-    
+    var goFaster = () => {
+        redQueen_alice.playbackRate *= 1.1;
+        adjustBackgroundPlayback();
+    }
+
+    document.addEventListener("click", goFaster);
     
     return (
         <div className="earth">

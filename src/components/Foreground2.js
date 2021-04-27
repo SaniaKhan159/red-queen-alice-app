@@ -2,7 +2,7 @@ import React from "react";
 import useWebAnimations from "@wellyshen/use-web-animations";
 
 export const Foreground2 = () => {
-    const { ref, playState, getAnimation } = useWebAnimations({
+    const { ref } = useWebAnimations({
         keyframes:
         { transform: "translateX(100%)",
           transform: "translateX(-100%)" },
@@ -11,8 +11,6 @@ export const Foreground2 = () => {
             iterations: "Infinity",
         }
     });
-
-    const animationFg2 = getAnimation();
 
     return (
         <div className="scenery" id="foreground2" ref={ref}>
